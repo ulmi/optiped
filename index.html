@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130611306-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-130611306-1');
+      gtag('config', 'UA-130611306-1');-->
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#2196f3">
+    <meta name="theme-color" content="#017244">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0084e7">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#00b76b">
     <meta name="description" content="Your favorite Mohawk Hudson Land Conservancy preserve maps saved to your mobile device for offline viewing and navigation!">
-    <meta name="author" content="Bryan McBride">
-    <title>Mohawk Hudson Maps</title>
+    <meta name="author" content="Metsã, based on the work of Bryan McBride">
+    <title>OPTIPED - wk Hudson Maps</title>
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
@@ -35,10 +35,10 @@
               <div class="navbar">
                 <div class="navbar-bg"></div>
                 <div class="navbar-inner">
-                  <div class="title">Welcome!</div>
+                  <div class="title">Bem-vindo!</div>
                   <div class="right">
                     <a href="#" class="link icon-only panel-close" data-panel="left">
-                      <i class="icon material-icons">close</i>
+                      <i class="icon material-icons">fechar</i>
                     </a>
                   </div>
                 </div>
@@ -48,11 +48,11 @@
                     <p class="text-align-center">
                       <a href="https://mohawkhudson.org/" class="external"><img src="assets/img/mhlc-logo.png" style="max-width: 100%;"></a>
                     </p>
-                    <p>The <a href="https://mohawkhudson.org/" class="external">Mohawk Hudson Land Conservancy</a> has 18 preserves that are open to the public for recreational activities such as walking, hiking, snowshoeing, and cross-country skiing. We invite you to explore them!</p>
-                    <p>All preserves are open to the public, free of charge, from dawn to dusk. Parking is available at each location. Please abide by the following rules and regulations for your enjoyment, as well as for the enjoyment of others, and for further protection of the preserves.</p>
-                    <p>Remember: <strong>Always</strong> sign in and out at the trail registers, located within the kiosk at each preserve.</p>
+                    <p>A <a href="https://mohawkhudson.org/" class="external">OPTIPED</a> disponibiliza um serviço de informação gratuito dedicado aos caminhos pedestres através do qual é possível obter dados sobre a disponibilidade dos pontos de interesse associados e também colaborar no processo de gestão da sua conservação através de uma ferramenta colaborativa</p>
+                    onde os contributos são recompensados com vouchers.</p>
+                    A interação da equipa OPTIPED com entidades gestores e operadores turísticos levou ainda à criação de serviços especializados de apoio à gestão da manutenção e realização de operações de manutenção.
                   </div>
-                  <div class="block-title">Open Source Libraries</div>
+                  <div class="block-title">Realizado com e as seguintes bibliotecas open-source</div>
                   <div class="list links-list">
                     <ul>
                       <li>
@@ -69,10 +69,10 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="block-title">Credits</div>
+                  <div class="block-title">Créditos</div>
                   <div class="list simple-list">
                     <ul>
-                      <li>Developed by Bryan McBride</li>
+                      <li>Desenvolvido pela Metsã, baseado no trabalho de Bryan McBride</li>
                     </ul>
                   </div>
               </div>
@@ -86,7 +86,7 @@
             <div class="navbar">
               <div class="navbar-bg"></div>
               <div class="navbar-inner">
-                <div class="title">Settings</div>
+                <div class="title">Definições</div>
                 <div class="right">
                   <a href="#" class="link icon-only panel-close" data-panel="right">
                     <i class="icon material-icons">close</i>
@@ -95,7 +95,7 @@
               </div>
             </div>
             <div class="page-content" style="overflow: auto;">
-              <div class="block-title">Map Opacity</div>
+              <div class="block-title">Transparência do Mapa</div>
               <div class="list simple-list">
                 <ul>
                   <li style="line-height: 100%;">
@@ -115,7 +115,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="block-title">Basemaps</div>
+              <div class="block-title">Mapas Base</div>
               <div class="list">
                 <ul>
                   <li>
@@ -156,14 +156,14 @@
                   </li>
                 </ul>
               </div>
-              <div class="block-title">Tools</div>
+              <div class="block-title">Ferramentas</div>
               <div class="list">
                 <ul>
                   <li><a class="item-link list-button panel-close" onclick="app.map.getView().setRotation(0); app.map.getView().fit(app.layers.image.getExtent(), {constrainResolution: false});">Zoom to Map</a></li>
-                  <li><a class="item-link list-button panel-close" onclick="app.functions.startMeasurement();">Measure Distance</a></li>
-                  <li><a class="item-link list-button panel-close" onclick="app.functions.getDirections();">Driving Directions</a></li>
-                  <li><a class="item-link list-button panel-close" onclick="app.functions.launchGmaps();">Open Google Maps</a></li>
-                  <li><a class="item-link list-button panel-close external" id="info-link" href="#" target="_blank">Additional Info</a></li>
+                  <li><a class="item-link list-button panel-close" onclick="app.functions.startMeasurement();">Medir distância</a></li>
+                  <li><a class="item-link list-button panel-close" onclick="app.functions.getDirections();">Obter direções</a></li>
+                  <li><a class="item-link list-button panel-close" onclick="app.functions.launchGmaps();">Abrir Google Maps</a></li>
+                  <li><a class="item-link list-button panel-close external" id="info-link" href="#" target="_blank">Mais informação</a></li>
                 </ul>
               </div>
             </div>
@@ -184,7 +184,7 @@
                   <i class="icon material-icons">menu</i>
                 </a>
               </div>  
-              <div class="title sliding">Mohawk Hudson Maps</div>
+              <div class="title sliding">OPTIPED</div>
                 <div class="right">
                   <a class="link icon-only searchbar-enable" data-searchbar=".maplist-searchbar">
                     <i class="icon material-icons">search</i>
@@ -207,7 +207,7 @@
             <div class="searchbar-backdrop"></div>
             <div class="list simple-list searchbar-not-found">
               <ul>
-                <li>Nothing found</li>
+                <li>Não foi encontrado nada</li>
               </ul>
             </div>
             
