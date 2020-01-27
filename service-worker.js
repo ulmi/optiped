@@ -24,12 +24,11 @@ const PRECACHE_URLS = [
   './', // Alias for index.html
   'manifest.json',
   'maps.json',
-  'assets/img/apple-touch-icon.png',
-  'assets/img/android-chrome-192x192.png',
+  'assets/img/apple-icon-180x180.png',
+  'assets/img/android-icon-192x192.png',
   'assets/img/favicon-32x32.png',
   'assets/img/favicon-16x16.png',
-  'assets/img/mhlc.png',
-  'assets/img/mhlc-logo.png',
+  'assets/img/optiped_logo.png',
   'assets/img/crosshair.svg',
   'assets/img/ios-share.png',
   'assets/vendor/framework7-5.2.0/css/framework7.bundle.min.css',
@@ -44,19 +43,7 @@ const PRECACHE_URLS = [
   'maps/2018-Wolf-Creek-Falls-Preserve-Map.jpg',
   'maps/AlbCo_RailTrail.jpg',
   'maps/Bennett-Hill-Preserve-2017-new-logo.jpg',
-  'maps/Bozenkill_Preserve2.jpg',
-  'maps/Fox_Preserve-10-3-17.jpg',
-  'maps/Holt_Preserve.jpg',
-  'maps/MHLC-Keleher-Preserve-Update-2017.jpg',
-  'maps/Mosher-Marsh-Update-2017.jpg',
-  'maps/Normanskill_Preserve.jpg',
-  'maps/Phillipinkill_Preserve.jpg',
-  'maps/Schiffendecker_Preserve.jpg',
-  'maps/SchoharieCreek_Preserve.jpg',
-  'maps/StrawberryFields_Preserve.jpg',
-  'maps/Swift_Preserve1.jpg',
-  'maps/VanDyke_Entire_Preserve.jpg',
-  'maps/Winn_Preserve-2017-map.jpg'
+  'maps/pr1_fzz.jpg'
 ];
 
 // The install handler takes care of precaching the resources we always need.

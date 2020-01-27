@@ -110,8 +110,8 @@ app.layers = {
       })
     }),
     nysdop: new ol.layer.Tile({
-      source: new ol.source.TileWMS({
-        url: "https://orthos.dhses.ny.gov/ArcGIS/services/Latest/MapServer/WMSServer",
+      source: new ol.source.XYZ({
+        url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         attributions: "<a href='http://orthos.dhses.ny.gov/arcgis/rest/' class='external'>NYS</a>",
         params: {
           "LAYERS": "0,1,2,3,4",
@@ -122,9 +122,13 @@ app.layers = {
     }),
     topo: new ol.layer.Tile({
       source: new ol.source.XYZ({
-        url: "https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}",
+        url: "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
         attributions: "<a href='https://www.doi.gov' class='external'>USDOI</a> | <a href='https://www.usgs.gov' class='external'>USGS</a> | <a href='https://www.usgs.gov/laws/policies_notices.html' class='external'>Policies</a>",
-        maxZoom: 16
+        params: {
+          "LAYERS": "0,1,2,3,4",
+          "TILED": true
+        },
+        transition: 0
       })
     })
   }
@@ -146,12 +150,12 @@ app.measure = {
   measurement: 0,
   formatLength: function(length) {
     const meters = length * app.map.getView().getProjection().getMetersPerUnit();
-    const feet = meters * 3.2808;
+    //const feet = meters * 3.2808;
     let output;
-    if (feet > 1320) {
-      output = (feet * 0.00018939).toFixed(2) + " " + "mi";
+    if (meters > 1000) {
+      output = (meters/1000).toFixed(2) + " " + "km";
     } else {
-      output = feet.toFixed(0) + " " + "ft";
+      output = meters.toFixed(0) + " " + "m";
     }
     return output;
   },
