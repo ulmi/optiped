@@ -37,11 +37,14 @@
                 <div class="navbar-inner">
                   <div class="title">Bem-vindo!</div>
                   <div class="right">
-                    <a href="#" class="link icon-only panel-close" data-panel="left">
+                    <a href="#" class="link icon-only panel-close" data-panel=".panel-left">
                       <i class="icon material-icons">fechar</i>
                     </a>
                   </div>
                 </div>
+              </div>
+              <div class="popup popup-tablet-fullscreen">
+                Any HTML content goes here
               </div>
               <div class="page-content">
                 <div class="block">
@@ -80,7 +83,7 @@
           </div>
         </div>
 
-      <div class="panel panel-right panel-cover">
+      <div class="panel panel-right panel-right-1 panel-cover">
         <div class="view">
           <div class="page">
             <div class="navbar">
@@ -88,7 +91,7 @@
               <div class="navbar-inner">
                 <div class="title">Definições</div>
                 <div class="right">
-                  <a href="#" class="link icon-only panel-close" data-panel="right">
+                  <a href="#" class="link icon-only panel-close" data-panel=".panel-right-1">
                     <i class="icon material-icons">close</i>
                   </a>
                 </div>
@@ -171,6 +174,81 @@
         </div>
       </div>
 
+      <!-- form panel-->
+      <div class="panel panel-right panel-right-2 panel-cover">
+        <div class="view">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-bg"></div>
+              <div class="navbar-inner">
+                <div class="title">Reportar um problema</div>
+                <div class="right">
+                  <div class="alert">Message Sent</div>
+                  <a href="#" class="link icon-only panel-close" data-panel=".panel-right-2">
+                    <i class="icon material-icons">close</i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="popup popup-tablet-fullscreen">
+              Any HTML content goes here
+            </div>
+            <div class="page-content">
+              <form class="list" id="prob_report">
+                <ul>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">E-mail (obrigatório)</div>
+                        <div class="item-input-wrap">
+                          <input type="email" name="email" placeholder="E-mail">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Tipo de problema</div>
+                        <div class="item-input-wrap">
+                          <select name="tipo_prob">
+                            <option value="Vegetação a dificultar a passagem">Vegetação a dificultar a passagem</option>
+                            <option value="Árvores caídas para o caminho">Árvores caídas para o caminho</option>
+                            <option value="Pedras caídas no caminho">Pedras caídas no caminho</option>
+                            <option value="Caminho desmorenado">Caminho desmorenado</option>
+                            <option value="Tábuas e/ou corrimão em falta ou partida">Tábuas e/ou corrimão em falta ou partida</option>
+                            <option value="Marcação não visível">Marcação não visível</option>
+                            <option value="Poucas marcações de caminho">Poucas marcações de caminho</option>
+                            <option value="Suporte danificado">Suporte danificado</option>
+                            <option value="Painel informativo danificado/ilegivél">Painel informativo danificado/ilegivél</option>
+                            <option value="Troço escorregadio">Troço escorregadio</option>
+                            <option value="Existência de lixo ou outros detritos">Existência de lixo ou outros detritos</option>
+                            <option value="Outro/a">Outro/a</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content item-input">
+                      <div class="item-inner">
+                        <div class="item-title item-label">Mais informações</div>
+                        <div class="item-input-wrap">
+                          <input type="text" name="outros" placeholder="Mais informações que queira partilhar!">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </form>
+              <div class="block block-strong row">
+                <div class="col"><a class="button id="submit" type="submit" sendMessage()>Registar problema</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Your main view, should have "view-main" class -->
       <div id="view-home" class="view view-main view-init">
         <!-- Page, data-name contains page name which can be used in page callbacks -->
@@ -180,7 +258,7 @@
             <div class="navbar-bg"></div>
             <div class="navbar-inner sliding">
               <div class="left">
-                <a href="#" class="link icon-only panel-open" data-panel="left">
+                <a href="#" class="link icon-only panel-open" data-panel=".panel-left">
                   <i class="icon material-icons">menu</i>
                 </a>
               </div>  
@@ -232,7 +310,7 @@
                 </div>
                 <div class="title" id="map-title"></div>
                 <div class="right">
-                  <a href="#" class="link icon-only panel-open" data-panel="right">
+                  <a href="#" class="link icon-only panel-open" data-panel=".panel-right-1">
                     <i class="icon material-icons">menu</i>
                   </a>
                 </div>
@@ -241,21 +319,43 @@
             <div class="page-content">
               <div id="map" class="map">
                 <div class="crosshair" id="crosshair"></div>
-                <div class="fab fab-right-bottom" id="rotate-btn" style="bottom: 76px; right: 10px; display: none;">
+                <div class="fab fab-left-top" id="rotate-btn" style="top: -45px; left: 10px; display: none;">
                   <a href="#" onclick="app.map.getView().setRotation(0);">
                     <i class="icon material-icons" id="rotate-icon">navigation</i>
                   </a>
                 </div>
-                <div class="fab fab-right-bottom" style="bottom: 10px; right: 10px;">
+                <div class="fab fab-right-top" style="top: -45px; right: 10px;">
                   <a href="#" id="gps-btn" class="disabled" onclick="app.map.getView().setCenter(app.geolocation.getPosition());">
                     <i class="icon material-icons" id="gps-icon">gps_not_fixed</i>
                   </a>
+                </div>
+                <div class="fab fab-right-bottom" style="bottom: 50px; right: 10px;">
+                  <a href="#">
+                    <!-- menu config-->
+                    <i class="icon material-icons">menu</i>
+                    <!-- 2a entrada-->
+                    <i class="icon material-icons">close</i>
+                  </a>
+                  <!--buttons addon-->
+                  <div class="fab-buttons fab-buttons-top">
+                  <a href="#" class="link panel-open fab-label-button" data-panel=".panel-right-2">
+                    <span class="icon material-icons">new_releases</span>
+                    <span class="fab-label">Reportar problema</span>
+                  </a>
+                  <a href="#" class="link panel-open fab-label-button" data-panel=".panel-right-1">
+                    <span class="icon material-icons">settings</span>
+                    <span class="fab-label">Definições</span>
+                  </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- form popup-->
+      
+
     </div>
     <script src="assets/vendor/framework7-5.2.0/js/framework7.bundle.min.js"></script>
     <script src="assets/vendor/openlayers-6.1.1/ol.js"></script>
@@ -267,5 +367,33 @@
         navigator.serviceWorker.register("service-worker.js");
       }
     </script>
+    
+    <!-- firebase addon-->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAuoncpVyoFgJ2HAIG7wW-2TWZ65vH45fE",
+    authDomain: "optiped.firebaseapp.com",
+    databaseURL: "https://optiped.firebaseio.com",
+    projectId: "optiped",
+    storageBucket: "optiped.appspot.com",
+    messagingSenderId: "188392468819",
+    appId: "1:188392468819:web:adfa1de03be03c0cadf1a6",
+    measurementId: "G-9S5NWTLLLE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
   </body>
 </html>
