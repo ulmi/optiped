@@ -91,8 +91,23 @@
   z-index: 99999;
 }
 
+.panel-right-2 {
+  width: 350px;
+}
+
+
 @media screen and (max-device-width: 320px) and (orientation: portrait){
   .navbar .title {
     font-size: 17px;
   }
+}
+
+
+.alert {
+  text-align: center;
+  padding: 10px;
+  background: rgb(168, 240, 177);
+  color: green;
+  margin-bottom: 10px;
+  display: none;
 }
