@@ -574,6 +574,8 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
 
+    <script src="assets/js/app.js"></script>
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
@@ -596,32 +598,8 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
-
-      // Enabling Offline Capability
-
-          firebase.firestore().settings({
-            cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED,
-          });
-          firebase.firestore().enablePersistence();
-          // Listen to when a user logs in or logs out
-          firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-              const userDetails = {
-                id: user.uid,
-                name: user.displayName,
-                email: user.email,
-                provider: user.providerData[0].providerId,
-              };
-              console.log(userDetails)
-            } else {
-              console.log('No User Found')
-            }
-          });
-
-      var db = firebase.firestore();
     </script>
 
-    <script src="assets/js/app.js"></script>
 
     <!-- // Nao precisa disto para inicializar??
    <script src="/__/firebase/init.js"></script> -->
