@@ -564,7 +564,6 @@
     <script src="assets/vendor/openlayers-6.1.1/ol.js"></script>
     <script src="assets/vendor/proj4js-2.5.0/proj4.js"></script>
     <script src="assets/vendor/kompas-0.0.1/kompas.js"></script>
-    <script src="assets/js/app.js"></script>
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("service-worker.js");
@@ -574,6 +573,7 @@
     <!-- firebase addon-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="assets/js/app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -594,7 +594,6 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
-      firebase.database();
     </script>
     <!-- // Nao precisa disto para inicializar??
    <script src="/__/firebase/init.js"></script> -->
