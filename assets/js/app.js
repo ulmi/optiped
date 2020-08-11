@@ -528,9 +528,9 @@ app.init();
 // firebase addon
 //Reference for form collection(3)
 
-var db = firebase.database();
+var db = firebase.firestore();
 
-let formMessage = firebase.database().ref('issue_report');
+let formMessage = firebase.firestore().ref('issue_report');
 
 
 //listen for submit event//(1)
