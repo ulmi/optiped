@@ -595,11 +595,34 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
+
+
+      // Enabling Offline Capability
+
+          firebase.firestore().settings({
+            cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED,
+          });
+          firebase.firestore().enablePersistence();
+          // Listen to when a user logs in or logs out
+          firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              const userDetails = {
+                id: user.uid,
+                name: user.displayName,
+                email: user.email,
+                provider: user.providerData[0].providerId,
+              };
+              console.log(userDetails)
+            } else {
+              console.log('No User Found')
+            }
+          });
+
       var db = firebase.firestore();
     </script>
 
     <script src="assets/js/app.js"></script>
-    
+
     <!-- // Nao precisa disto para inicializar??
    <script src="/__/firebase/init.js"></script> -->
   </body>
