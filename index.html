@@ -26,12 +26,8 @@
     />
     <meta name="author" content="Metsã, based on the work of Bryan McBride" />
     <title>OPTIPED - Construímos caminhos juntos!</title>
-    <link 
-      rel="manifest" 
-      href="manifest.json" />
-    <link 
-      rel="apple-touch-icon" 
-      href="assets/img/apple-icon-180x180.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="assets/img/apple-icon-180x180.png" />
     <link
       rel="icon"
       type="image/png"
@@ -48,12 +44,8 @@
       rel="stylesheet"
       href="assets/vendor/framework7-5.2.0/css/framework7.bundle.min.css"
     />
-    <link 
-      rel="stylesheet" 
-      href="assets/vendor/openlayers-6.1.1/ol.css" />
-    <link 
-      rel="stylesheet" 
-      href="assets/css/app.css" />
+    <link rel="stylesheet" href="assets/vendor/openlayers-6.1.1/ol.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
   </head>
   <body>
     <div id="app">
@@ -81,8 +73,7 @@
             <div class="page-content">
               <div class="block">
                 <p class="text-align-center">
-                  <a href="https://5ddc10c90aec4.site123.me/" class="external"
-                    >
+                  <a href="https://5ddc10c90aec4.site123.me/" class="external">
                     <img
                       src="assets/img/optiped_logo.png"
                       style="max-width: 100%;"
@@ -93,7 +84,7 @@
                   A
                   <a href="https://5ddc10c90aec4.site123.me/" class="external">
                     OPTIPED
-                  </a >
+                  </a>
                   disponibiliza um serviço de informação gratuito dedicado aos
                   caminhos pedestres através do qual é possível obter dados
                   sobre a disponibilidade dos pontos de interesse associados e
@@ -247,7 +238,7 @@
                     <a
                       class="item-link list-button panel-close"
                       onclick="app.map.getView().setRotation(0); app.map.getView().fit(app.layers.image.getExtent(), {constrainResolution: false});"
-                      >
+                    >
                       Zoom to Map
                     </a>
                   </li>
@@ -255,7 +246,7 @@
                     <a
                       class="item-link list-button panel-close"
                       onclick="app.functions.startMeasurement();"
-                      >
+                    >
                       Medir distância
                     </a>
                   </li>
@@ -263,7 +254,7 @@
                     <a
                       class="item-link list-button panel-close"
                       onclick="app.functions.getDirections();"
-                      >
+                    >
                       Obter direções
                     </a>
                   </li>
@@ -271,7 +262,7 @@
                     <a
                       class="item-link list-button panel-close"
                       onclick="app.functions.launchGmaps();"
-                      >
+                    >
                       Abrir Google Maps
                     </a>
                   </li>
@@ -281,7 +272,7 @@
                       id="info-link"
                       href="#"
                       target="_blank"
-                      >
+                    >
                       Mais informação
                     </a>
                   </li>
@@ -344,10 +335,10 @@
                           <select name="tipo_prob">
                             <option value="Vegetação a dificultar a passagem"
                               >Vegetação a dificultar a passagem
-                              </option>
+                            </option>
                             <option value="Árvores caídas para o caminho"
                               >Árvores caídas para o caminho
-                              </option>
+                            </option>
                             <option value="Pedras caídas no caminho"
                               >Pedras caídas no caminho
                             </option>
@@ -360,7 +351,7 @@
                             </option>
                             <option value="Marcação não visível"
                               >Marcação não visível
-                            </option >
+                            </option>
                             <option value="Poucas marcações de caminho"
                               >Poucas marcações de caminho
                             </option>
@@ -378,8 +369,7 @@
                               value="Existência de lixo ou outros detritos"
                               >Existência de lixo ou outros detritos
                             </option>
-                            <option value="Outro/a">Outro/a
-                            </option>
+                            <option value="Outro/a">Outro/a </option>
                           </select>
                         </div>
                       </div>
@@ -582,63 +572,64 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
     <script
-      src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js">
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAuoncpVyoFgJ2HAIG7wW-2TWZ65vH45fE",
-        authDomain: "optiped.firebaseapp.com",
-        databaseURL: "https://optiped.firebaseio.com",
-        projectId: "optiped",
-        storageBucket: "optiped.appspot.com",
-        messagingSenderId: "188392468819",
-        appId: "1:188392468819:web:adfa1de03be03c0cadf1a6",
-        measurementId: "G-9S5NWTLLLE"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-
-      var db = firebase.database();
-
-      // firebase addon
-//Reference for form collection(3)
-let formMessage = firebase.database().ref('issue_report');
-
-//listen for submit event//(1)
-document
-  .getElementById('registrationform')
-  .addEventListener('submit', formSubmit);
-
-//Submit form(1.2)
-function formSubmit(e) {
-  e.preventDefault();
-  // Get Values from the DOM
-  let email = document.querySelector('#email').value;
-  let tipo_prob = document.querySelector('#tipo_prob').value;
-  let outros = document.querySelector('#outros').value;
-
-  //send message values
-  sendMessage(email, tipo_prob, outros);
+      src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"
+    >
+                  // Your web app's Firebase configuration
+                  var firebaseConfig = {
+                    apiKey: "AIzaSyAuoncpVyoFgJ2HAIG7wW-2TWZ65vH45fE",
+                    authDomain: "optiped.firebaseapp.com",
+                    databaseURL: "https://optiped.firebaseio.com",
+                    projectId: "optiped",
+                    storageBucket: "optiped.appspot.com",
+                    messagingSenderId: "188392468819",
+                    appId: "1:188392468819:web:adfa1de03be03c0cadf1a6",
+                    measurementId: "G-9S5NWTLLLE"
+                  };
+                  // Initialize Firebase
+                  firebase.initializeApp(firebaseConfig);
+                  firebase.analytics();
 
 
-  //Form Reset After Submission(7)
-  document.getElementById('prob_report').reset();
-}
+            var database = firebase.database();
 
-//Send Message to Firebase(4)
 
- function sendMessage(email, tipo_prob, outros) {
-  let newFormMessage = formMessage.push();
-  newFormMessage.set({
-    email: email,
-    tipo_prob: tipo_prob,
-    outros: outros,
-  });
-}
+                  // firebase addon
+            //Reference for form collection(3)
+            let formMessage = firebase.database().ref('issue_report');
+
+            //listen for submit event//(1)
+            document
+              .getElementById('registrationform')
+              .addEventListener('submit', formSubmit);
+
+            //Submit form(1.2)
+            function formSubmit(e) {
+              e.preventDefault();
+              // Get Values from the DOM
+              let email = document.querySelector('#email').value;
+              let tipo_prob = document.querySelector('#tipo_prob').value;
+              let outros = document.querySelector('#outros').value;
+
+              //send message values
+              sendMessage(email, tipo_prob, outros);
+
+              //Form Reset After Submission(7)
+              document.getElementById('prob_report').reset();
+            }
+
+            //Send Message to Firebase(4)
+
+             function sendMessage(email, tipo_prob, outros) {
+              let newFormMessage = formMessage.push();
+              firebase.database().ref('issue_report').set({
+                email: email,
+                tipo_prob: tipo_prob,
+                outros: outros,
+              });
+            }
 
     </script>
-
-
+    
     <!-- // Nao precisa disto para inicializar??
    <script src="/__/firebase/init.js"></script> -->
   </body>
