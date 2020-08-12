@@ -616,7 +616,7 @@
 
       function sendMessage(email, tipo_prob, outros) {
         let newFormMessage = formMessage.push();
-        firebase.database().ref("issue_report").set({
+        newFormMessage.set({
           email: email,
           tipo_prob: tipo_prob,
           outros: outros,
