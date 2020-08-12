@@ -595,9 +595,7 @@
       let formMessage = firebase.database().ref("issue_report");
 
       //listen for submit event//(1)
-      document
-        .getElementById("#prob_report")
-        .addEventListener("#submit", formSubmit);
+      document.getElementById("prob_report").addEventListener("submit", formSubmit);
 
       //Submit form(1.2)
       function formSubmit(e) {
@@ -607,15 +605,6 @@
         let tipo_prob = document.querySelector("#tipo_prob").value;
         let outros = document.querySelector("#outros").value;
 
-        //send message values
-        sendMessage(email, tipo_prob, outros);
-
-        //Form Reset After Submission(7)
-        document.getElementById("#prob_report").reset();
-      }
-
-      //Send Message to Firebase(4)
-
       function sendMessage(email, tipo_prob, outros) {
         let newFormMessage = formMessage.push();
         newFormMessage.set({
@@ -624,6 +613,17 @@
           outros: outros,
         });
       }
+
+        //send message values
+        sendMessage(email, tipo_prob, outros);
+
+        //Form Reset After Submission(7)
+        document.getElementById("prob_report").reset();
+      }
+
+      //Send Message to Firebase(4)
+
+
     </script>
 
     <!-- // Nao precisa disto para inicializar??
