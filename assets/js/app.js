@@ -551,7 +551,7 @@ app.init();
 
       document
         .getElementById("prob_report")
-        .addEventListener("submit, formSubmit);
+        .addEventListener("submit", formSubmit);
 
       //Submit form(1.2)
       function formSubmit(e) {
