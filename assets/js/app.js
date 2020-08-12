@@ -549,7 +549,9 @@ app.init();
       //listen for submit event//(1)
       // document.getElementById("prob_report").addEventListener("submit", formSubmit);
 
-      document.getElementById("submit").addEventListener("click", formSubmit);
+      document
+        .getElementById("prob_report")
+        .addEventListener("submit, formSubmit);
 
       //Submit form(1.2)
       function formSubmit(e) {
