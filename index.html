@@ -283,6 +283,8 @@
         </div>
       </div>
 
+                                        <!-- //////////////////////////////////// -->
+
       <!-- form panel-->
       <div class="panel panel-right panel-right-2 panel-cover">
         <div class="view">
@@ -318,7 +320,7 @@
                         <div class="item-input-wrap">
                           <input
                             type="email"
-                            name="email"
+                            id="email"
                             placeholder="E-mail"
                           />
                         </div>
@@ -332,7 +334,7 @@
                           Tipo de problema
                         </div>
                         <div class="item-input-wrap">
-                          <select name="tipo_prob">
+                          <select id="tipo_prob">
                             <option value="Vegetação a dificultar a passagem"
                               >Vegetação a dificultar a passagem
                             </option>
@@ -384,7 +386,7 @@
                         <div class="item-input-wrap">
                           <input
                             type="text"
-                            name="outros"
+                            id="outros"
                             placeholder="Mais informações que queira partilhar!"
                           />
                         </div>
@@ -594,8 +596,8 @@
 
       //listen for submit event//(1)
       document
-        .getElementById("prob_report")
-        .addEventListener("submit", formSubmit);
+        .getElementById("#prob_report")
+        .addEventListener("#submit", formSubmit);
 
       //Submit form(1.2)
       function formSubmit(e) {
@@ -609,7 +611,7 @@
         sendMessage(email, tipo_prob, outros);
 
         //Form Reset After Submission(7)
-        document.getElementById("prob_report").reset();
+        document.getElementById("#prob_report").reset();
       }
 
       //Send Message to Firebase(4)
