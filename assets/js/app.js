@@ -524,3 +524,55 @@ app.on("init", function() {
 })
 
 app.init();
+
+// Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAuoncpVyoFgJ2HAIG7wW-2TWZ65vH45fE",
+        authDomain: "optiped.firebaseapp.com",
+        databaseURL: "https://optiped.firebaseio.com",
+        projectId: "optiped",
+        storageBucket: "optiped.appspot.com",
+        messagingSenderId: "188392468819",
+        appId: "1:188392468819:web:adfa1de03be03c0cadf1a6",
+        measurementId: "G-9S5NWTLLLE",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      var database = firebase.database();
+
+      // firebase addon
+      //Reference for form collection(3)
+      let formMessage = firebase.database().ref("issue_report");
+
+      //listen for submit event//(1)
+      // document.getElementById("prob_report").addEventListener("submit", formSubmit);
+
+      document.getElementById("submit").addEventListener("click", formSubmit);
+
+      //Submit form(1.2)
+      function formSubmit(e) {
+        e.preventDefault();
+        // Get Values from the DOM
+        let email = document.querySelector("#email").value;
+        let tipo_prob = document.querySelector("#tipo_prob").value;
+        let outros = document.querySelector("#outros").value;
+
+
+        //send message values
+        sendMessage(email, tipo_prob, outros);
+
+        //Form Reset After Submission(7)
+        document.getElementById("prob_report").reset();
+      }
+
+      //Send Message to Firebase(4)
+      function sendMessage(email, tipo_prob, outros) {
+        let newFormMessage = formMessage.push();
+        newFormMessage.set({
+          email: email,
+          tipo_prob: tipo_prob,
+          outros: outros,
+        });
+      }
