@@ -525,38 +525,3 @@ app.on("init", function() {
 
 app.init();
 
-// firebase addon
-//Reference for form collection(3)
-let formMessage = firebase.firebase().ref('issue_report');
-
-//listen for submit event//(1)
-document
-  .getElementById('registrationform')
-  .addEventListener('submit', formSubmit);
-
-//Submit form(1.2)
-function formSubmit(e) {
-  e.preventDefault();
-  // Get Values from the DOM
-  let email = document.querySelector('#email').value;
-  let tipo_prob = document.querySelector('#tipo_prob').value;
-  let outros = document.querySelector('#outros').value;
-
-  //send message values
-  sendMessage(email, tipo_prob, outros);
-
-
-  //Form Reset After Submission(7)
-  document.getElementById('prob_report').reset();
-}
-
-//Send Message to Firebase(4)
-
- function sendMessage(email, tipo_prob, outros) {
-  let newFormMessage = formMessage.push();
-  newFormMessage.set({
-    email: email,
-    tipo_prob: tipo_prob,
-    outros: outros,
-  });
-}
