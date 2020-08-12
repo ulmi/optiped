@@ -283,7 +283,7 @@
         </div>
       </div>
 
-                                        <!-- //////////////////////////////////// -->
+      <!-- //////////////////////////////////// -->
 
       <!-- form panel-->
       <div class="panel panel-right panel-right-2 panel-cover">
@@ -318,11 +318,7 @@
                           E-mail (obrigatório)
                         </div>
                         <div class="item-input-wrap">
-                          <input
-                            type="email"
-                            id="email"
-                            placeholder="E-mail"
-                          />
+                          <input type="email" id="email" placeholder="E-mail" />
                         </div>
                       </div>
                     </div>
@@ -397,7 +393,14 @@
               </form>
               <div class="block block-strong row">
                 <div class="col">
-                  <button class="button" id="submit" type="submit" sendMessage()>Registar problema</button>
+                  <button
+                    class="button"
+                    id="submit"
+                    type="submit"
+                    sendMessage()
+                  >
+                    Registar problema
+                  </button>
                 </div>
               </div>
             </div>
@@ -607,7 +610,6 @@
         let tipo_prob = document.querySelector("#tipo_prob").value;
         let outros = document.querySelector("#outros").value;
 
-
         //send message values
         sendMessage(email, tipo_prob, outros);
 
@@ -624,10 +626,6 @@
           outros: outros,
         });
       }
-
     </script>
-
-    <!-- // Nao precisa disto para inicializar??
-   <script src="/__/firebase/init.js"></script> -->
   </body>
 </html>
