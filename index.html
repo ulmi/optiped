@@ -395,9 +395,7 @@
               </form>
               <div class="block block-strong row">
                 <div class="col">
-                  <a class="button" id="submit" type="submit" sendMessage()
-                    >Registar problema</a
-                  >
+                  <a class="button" id="submit" type="submit" sendMessage()>Registar problema</a>
                 </div>
               </div>
             </div>
@@ -562,7 +560,7 @@
 
     <!-- firebase addon-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 
     <script src="assets/js/app.js"></script>
 
@@ -571,7 +569,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
 
     <script>
       // Your web app's Firebase configuration
@@ -589,44 +586,42 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
+      var database = firebase.database();
 
+      // firebase addon
+      //Reference for form collection(3)
+      let formMessage = firebase.database().ref("issue_report");
 
-var database = firebase.database();
-// firebase addon
-//Reference for form collection(3)
-let formMessage = firebase.database().ref('issue_report');
+      //listen for submit event//(1)
+      document
+        .getElementById("prob_report")
+        .addEventListener("submit", formSubmit);
 
-//listen for submit event//(1)
-document
-  .getElementById('prob_report')
-  .addEventListener('submit', formSubmit);
+      //Submit form(1.2)
+      function formSubmit(e) {
+        e.preventDefault();
+        // Get Values from the DOM
+        let email = document.querySelector("#email").value;
+        let tipo_prob = document.querySelector("#tipo_prob").value;
+        let outros = document.querySelector("#outros").value;
 
-//Submit form(1.2)
-function formSubmit(e) {
-  e.preventDefault();
-  // Get Values from the DOM
-  let email = document.querySelector('#email').value;
-  let tipo_prob = document.querySelector('#tipo_prob').value;
-  let outros = document.querySelector('#outros').value;
+        //send message values
+        sendMessage(email, tipo_prob, outros);
 
-  //send message values
-  sendMessage(email, tipo_prob, outros);
+        //Form Reset After Submission(7)
+        document.getElementById("prob_report").reset();
+      }
 
-  //Form Reset After Submission(7)
-  document.getElementById('prob_report').reset();
-}
+      //Send Message to Firebase(4)
 
-//Send Message to Firebase(4)
-
-function sendMessage(email, tipo_prob, outros) {
-  let newFormMessage = formMessage.push();
-  firebase.database().ref('issue_report').set({
-    email: email,
-    tipo_prob: tipo_prob,
-    outros: outros,
-  });
-}
-
+      function sendMessage(email, tipo_prob, outros) {
+        let newFormMessage = formMessage.push();
+        firebase.database().ref("issue_report").set({
+          email: email,
+          tipo_prob: tipo_prob,
+          outros: outros,
+        });
+      }
     </script>
 
     <!-- // Nao precisa disto para inicializar??
