@@ -607,14 +607,7 @@
         let tipo_prob = document.querySelector("#tipo_prob").value;
         let outros = document.querySelector("#outros").value;
 
-      function sendMessage(email, tipo_prob, outros) {
-        let newFormMessage = formMessage.push();
-        newFormMessage.set({
-          email: email,
-          tipo_prob: tipo_prob,
-          outros: outros,
-        });
-      }
+
 
         //send message values
         sendMessage(email, tipo_prob, outros);
@@ -624,7 +617,14 @@
       }
 
       //Send Message to Firebase(4)
-
+      function sendMessage(email, tipo_prob, outros) {
+        let newFormMessage = formMessage.push();
+        newFormMessage.set({
+          email: email,
+          tipo_prob: tipo_prob,
+          outros: outros,
+        });
+      }
 
     </script>
 
