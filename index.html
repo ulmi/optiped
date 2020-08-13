@@ -617,13 +617,17 @@
         alerta();
 
         //Form Reset After Submission(7)
-        document.getElementById("prob_report").reset();
-      }
+        function reseta() {
+          document.getElementById("prob_report").reset();
+        }
 
       function alerta() {
-        // $('#dialog').css('z-index','100000');
-        app.dialog.alert("O problema foi reportado com sucesso.", "Mensagem");
-        // app.panel.close("right");
+        app.dialog.alert(
+          "O problema foi reportado com sucesso.",
+          "Mensagem",
+          reseta()
+        );
+        app.panel.close("right");
       }
 
       //Send Message to Firebase(4)
