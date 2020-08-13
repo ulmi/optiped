@@ -393,17 +393,14 @@
               </form>
               <div class="block block-strong row">
                 <div class="col">
-                  <a
-                      href="#"
-                    class="button panel-open"
+                  <button
+                    class="button"
                     id="submit"
                     type="submit"
-                    data-panel=".panel-right-2"
                     sendMessage()
                   >
                     Registar problema
-                </a>
-
+                  </button>
                 </div>
               </div>
             </div>
@@ -598,9 +595,9 @@
       let formMessage = firebase.database().ref("issue_report");
 
       //listen for submit event//(1)
-       document.getElementById("registrationform").addEventListener("submit", formSubmit);
+      // document.getElementById("prob_report").addEventListener("submit", formSubmit);
 
-      // document.getElementById("submit").addEventListener("click", formSubmit);
+      document.getElementById("submit").addEventListener("click", formSubmit);
 
       //Submit form(1.2)
       function formSubmit(e) {
