@@ -612,9 +612,12 @@
 
         //send message values
         sendMessage(email, tipo_prob, outros);
-
+        
+        alert("O problema foi reportado com sucesso.");
+        app.panel.close("right");
         //Form Reset After Submission(7)
         document.getElementById("prob_report").reset();
+
       }
 
       //Send Message to Firebase(4)
