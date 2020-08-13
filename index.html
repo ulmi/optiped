@@ -615,18 +615,17 @@
 
         // alert("O problema foi reportado com sucesso.");
         alerta();
+      }
 
-        //Form Reset After Submission(7)
-        function reseta() {
-          document.getElementById("prob_report").reset();
-        }
+      //Form Reset After Submission(7)
+      function reseta() {
+        document.getElementById("prob_report").reset();
+      }
 
       function alerta() {
-        app.dialog.alert(
-          "O problema foi reportado com sucesso.",
-          "Mensagem",
-          reseta()
-        );
+        app.dialog
+          .alert("O problema foi reportado com sucesso.", "Mensagem")
+          .reseta();
         app.panel.close("right");
       }
 
