@@ -623,10 +623,9 @@
       }
 
       function alerta() {
-        app.dialog
-          .alert("O problema foi reportado com sucesso.", "Mensagem")
-          .reseta();
-        app.panel.close("right");
+        app.dialog.alert("O problema foi reportado com sucesso.", "Mensagem");
+        reseta();
+        // app.panel.close("right");
       }
 
       //Send Message to Firebase(4)
