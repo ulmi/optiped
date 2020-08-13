@@ -342,6 +342,7 @@
                         </div>
                         <div class="item-input-wrap">
                           <select id="tipo_prob">
+                            <option value="" disabled selected>Clique para seleccionar</option>
                             <option value="Vegetação a dificultar a passagem"
                               >Vegetação a dificultar a passagem
                             </option>
@@ -410,7 +411,7 @@
                     type="submit"
                     sendMessage()
                   >
-                    Registar problema
+                    Enviar
                   </button>
                 </div>
               </div>
@@ -625,8 +626,8 @@
 
       function alerta() {
         app.dialog.alert(
+          "Obrigado.",
           "O problema foi reportado com sucesso.",
-          "Mensagem",
           function () {
             // var element, name, arr;
             // element = document.getElementById("panel-right");
