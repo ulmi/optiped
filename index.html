@@ -617,6 +617,8 @@
           "O problema foi reportado com sucesso.",
           "Mensagem",
           function () {
+            var element = document.getElementById("panel");
+            element.classList.add("panel-close");
             document.getElementById("prob_report").reset();
           }
         );
