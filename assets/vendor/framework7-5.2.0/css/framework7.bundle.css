@@ -6025,6 +6025,7 @@ i.icon {
   color: var(--f7-dialog-text-color);
   font-size: var(--f7-dialog-font-size);
   background: var(--f7-dialog-bg-color);
+  z-index: 100000;
 }
 @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
   .ios-translucent-modals .dialog {
@@ -6036,6 +6037,7 @@ i.icon {
 .dialog.modal-in {
   opacity: 1;
   transform: translate3d(0, -50%, 0) scale(1);
+  z-index: 100000;
 }
 .dialog.modal-out {
   opacity: 0;
