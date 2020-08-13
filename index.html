@@ -612,17 +612,12 @@
 
         //send message values
         sendMessage(email, tipo_prob, outros);
-
-        // alert("O problema foi reportado com sucesso.");
-        alerta();
-
+        
+        alert("O problema foi reportado com sucesso.");
+        
         //Form Reset After Submission(7)
         document.getElementById("prob_report").reset();
-      }
 
-      function alerta() {
-        app.dialog.alert(error.message, "Geolocation error");
-        app.panel.close("right");
       }
 
       //Send Message to Firebase(4)
