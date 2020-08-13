@@ -609,15 +609,8 @@
 
         //send message values
         sendMessage(email, tipo_prob, outros);
-
-        // alert("O problema foi reportado com sucesso.");
         alerta();
       }
-
-      //Form Reset After Submission(7)
-      // function reseta() {
-      //   document.getElementById("prob_report").reset();
-      // }
 
       function alerta() {
         app.dialog.alert(
@@ -627,8 +620,7 @@
             document.getElementById("prob_report").reset();
           }
         );
-        // reseta();
-        // app.panel.close("right");
+        app.panel.close("right");
       }
 
       //Send Message to Firebase(4)
