@@ -617,8 +617,14 @@
           "O problema foi reportado com sucesso.",
           "Mensagem",
           function () {
-            var element = document.getElementById("panel");
-            element.classList.add("panel-close");
+            var element, name, arr;
+            element = document.getElementById("panel");
+            name = "panel-close";
+            arr = element.className.split(" ");
+            if (arr.indexOf(name) == -1) {
+              element.className += " " + name;
+            }
+
             document.getElementById("prob_report").reset();
           }
         );
