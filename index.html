@@ -138,7 +138,7 @@
         </div>
       </div>
 
-      <div class="panel panel-right panel-right-1 panel-cover">
+      <div id="panel-right" class="panel panel-right panel-right-1 panel-cover">
         <div class="view">
           <div class="page">
             <div class="navbar">
@@ -618,7 +618,7 @@
           "Mensagem",
           function () {
             var element, name, arr;
-            element = document.getElementById("panel");
+            element = document.getElementById("panel-right");
             name = "panel-close";
             arr = element.className.split(" ");
             if (arr.indexOf(name) == -1) {
