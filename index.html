@@ -504,7 +504,7 @@
                     >
                   </a>
                 </div>
-                <div class="fab fab-right-top" style="top: -45px; ">
+                <div class="fab fab-right-top" style="top: -45px;">
                   <a
                     href="#"
                     id="gps-btn"
@@ -516,9 +516,7 @@
                     >
                   </a>
                 </div>
-                <div
-                  class="fab fab-right-bottom"
-                >
+                <div class="fab fab-right-bottom">
                   <a href="#">
                     <!-- menu config-->
                     <i class="icon material-icons">menu</i>
@@ -617,13 +615,19 @@
       }
 
       //Form Reset After Submission(7)
-      function reseta() {
-        document.getElementById("prob_report").reset();
-      }
+      // function reseta() {
+      //   document.getElementById("prob_report").reset();
+      // }
 
       function alerta() {
-        app.dialog.alert("O problema foi reportado com sucesso.", "Mensagem");
-        reseta();
+        app.dialog.alert(
+          "O problema foi reportado com sucesso.",
+          "Mensagem",
+          function () {
+            document.getElementById("prob_report").reset();
+          }
+        );
+        // reseta();
         // app.panel.close("right");
       }
 
