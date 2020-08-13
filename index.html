@@ -127,7 +127,10 @@
               <div class="block-title">Créditos</div>
               <div class="list simple-list">
                 <ul>
-                  <li title=" Desenvolvido pela Metsã, baseado no trabalho de Bryan McBride " style="display: block; overflow: hidden;">
+                  <li
+                    title=" Desenvolvido pela Metsã, baseado no trabalho de Bryan McBride "
+                    style="display: block; overflow: hidden;"
+                  >
                     Desenvolvido pela Metsã, baseado no trabalho de Bryan
                     McBride
                   </li>
@@ -393,14 +396,26 @@
               </form>
               <div class="block block-strong row">
                 <div class="col">
-                  <button
+                  <a
                     class="button"
+                    href="#"
+                    class="link panel-close fab-label-button"
+                    data-panel=".panel-right-2"
                     id="submit"
                     type="submit"
                     sendMessage()
                   >
                     Registar problema
-                  </button>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="link panel-open fab-label-button"
+                    data-panel=".panel-right-2"
+                  >
+                    <span class="icon material-icons">new_releases</span>
+                    <span class="fab-label">Reportar problema</span>
+                  </a>
                 </div>
               </div>
             </div>
